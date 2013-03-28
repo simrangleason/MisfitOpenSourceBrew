@@ -1,0 +1,18 @@
+<!-- turn these on if in admin mode...
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
+-->
+
+<div class="recipe_text">
+  <div class="recipe_title"><%= @recipe.name %></div>
+  <div class="recipe_desc"><%= @recipe.description %></div>
+
+  <% if @recipe.malts %>
+  <div class="recipe_header">Malts</div>
+  <p>
+    <%= @recipe.malts %> <!-- TODO: linify... -->
+  </p>
+  <% else %>
+    no malts
+  <% end %>
+</div> <!-- recipe_text -->

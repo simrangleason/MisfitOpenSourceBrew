@@ -1,0 +1,130 @@
+body {
+   background: #FFFFFF;
+   font-family: Trebuchet, Verdana, sans-serif;
+   padding: 0;
+   margin: 0;
+}
+
+
+#header {
+   border-bottom: 3px solid #dfdddd;
+   height: 50px;
+   background: #FFFFFF;
+}
+
+#header #logo {
+    float:left;
+}
+
+#header #menu {
+    padding-left: 2em;
+    padding-top: 28px;
+}
+
+#header .section {
+   padding-left: 1em;
+}
+
+#header .section .selected {
+   font-weight: bold;
+}
+
+#header .section a:link, #header .section a:visited {
+  color: #888888;
+  text-decoration: none;
+}
+
+#header .section a:hover {
+  color: #AA1111;
+  text-decoration: underline;
+
+}
+
+#nav {
+   border-right: 3px solid #dfdddd;
+   background: #FFFFFF;
+   width: 187px;
+   height: 2048px;
+   float:left;
+   padding-left: .5em;
+   padding-top: 1em;
+}
+
+#content {
+   background-color: #EEEEEE;
+   padding-left: 1em;
+   margin-left: 188px;
+}
+
+.navheader {
+  font-weight:bold;
+  font-size: 10pt;
+  color: #666666;
+}
+
+.navbullet {
+  font-size: 8pt;
+  margin-left: 1em;
+  color: #999999;
+}
+
+
+.navbullet a:link, .navbullet a:visited {
+  color: #888888;
+  text-decoration: none;
+}
+
+.navbullet a:hover {
+  color: #AA1111;
+  text-decoration: underline;
+
+}
+
+.recipe_text {
+    float:left;
+    font-size: 10pt;
+    padding-left: 2em;
+    margin-left: 2em;
+}
+
+.recipe_title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+.recipe_desc {
+    font-size: 1.0em;
+    padding-left: 1em;
+    margin-bottom: 2em;
+}
+
+.recipe_header {
+    font-weight: bold;
+    margin-left: -.5em;
+}
+
+.recipe_name {
+    font-weight: bold;
+}
+
+.recipe_name a:link, .recipe_name a:visited {
+  color: #888888;
+  text-decoration: none;
+}
+
+.recipe_name a:hover {
+  color: #AA1111;
+  text-decoration: underline;
+}
+
+
+.recipe_image {
+    height: 2048px;
+    padding-left: 2em;
+    padding-top: 2em;
+}
+
+.brewlog {
+  font-size: 10pt;
+}
+

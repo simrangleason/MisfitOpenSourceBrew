@@ -1,0 +1,31 @@
+<%
+   controller = params[:controller]
+   action = params[:action]
+   if (controller == 'recipes') 
+      section = 'recipes'
+   end
+   if (controller == 'pages')
+      if ( action == 'home') 
+         section = 'home'
+      elsif ( action == 'howtobrew') 
+         section = 'howtobrew'
+      elsif ( action == 'gallery') 
+         section = 'gallery'
+      elsif ( action == 'brewlog') 
+         section = 'brewlog'
+      end
+   end
+%>
+<div id="header">
+  <span id="logo">
+    <a href="/"><img src="/images/misfit_logo_wide.png" border="0"
+		     alt="Misfit Open Source Brew" title="Misfit Open Source Brew" /></a>
+  </span>
+  <div id="menu">
+    <span class="section"><span class="<%= section == 'home' ? 'selected' : 'unselected' %>"><a href="/">Home</a></span></span>
+    <span class="section"><span class="<%= section == 'recipes' ? 'selected' : 'unselected' %>"><a href="/recipes">Recipes</a></span></span>
+    <span class="section"><span class="<%= section == 'brewlog' ? 'selected' : 'unselected' %>"><a href="/brewlog">Brew Log</a></span></span>
+    <span class="section"><span class="<%= section == 'howtobrew' ? 'selected' : 'unselected' %>"><a href="/howtobrew">Procedure</a></span></span>
+    <span class="section"><span class="<%= section == 'gallery' ? 'selected' : 'unselected' %>"><a href="/gallery">Gallery</a></span></span>
+  </div>
+</div>

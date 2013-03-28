@@ -1,0 +1,20 @@
+  
+  <table>
+    <tr>
+      <th align="right" valign="top"><%= f.label :identifier %></th>
+      <td><%= f.text_field :identifier %></td>
+    </tr>
+    <tr>
+      <th align="right" valign="top"><%= f.label :name %></th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th align="right" valign="top"><%= f.label :description %></th>
+      <td><%= f.text_area :description, :cols => 50, :rows => 3 %></td>
+    </tr>
+    <tr>
+      <th align="right" valign="top"><%= f.label :malts %></th>
+      <td><%= f.text_area :malts, :cols => 50, :rows => 12 %></td>
+    </tr>
+  </table>
+

@@ -1,0 +1,23 @@
+<h3>Misfit Open Source Brew Recipes</h3>
+
+<table class="recipes" cellspacing="0" cellpadding="0">
+  <tr>
+  </tr>
+
+<% @recipes.each do |recipe| %>
+  <tr>
+    <th align="right"><span class='recipe_name'><a href="/recipes/<%= recipe.identifier %>"><%= recipe.name %></a></span></th>
+    <td><%= recipe.description %></td>
+    <td><span class="recipe_actions">
+	<%= link_to 'Show', recipe %> | 
+	<%= link_to 'Edit', edit_recipe_path(recipe) %> |
+	<%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %>
+	</span>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New recipe', new_recipe_path %>
