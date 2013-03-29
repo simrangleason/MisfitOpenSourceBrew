@@ -7,7 +7,7 @@
 <% @recipes.each do |recipe| %>
   <tr>
     <th align="right"><span class='recipe_name'><a href="/recipes/<%= recipe.identifier %>"><%= recipe.name %></a></span></th>
-    <td><%= recipe.description %></td>
+    <td valign="top"><%= recipe.description %></td>
     <% if @admin %>
     <td><span class="recipe_actions">
 	<%= link_to 'Show', recipe %> | 
