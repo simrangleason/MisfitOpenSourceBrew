@@ -35,7 +35,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find_by_identifier(params[:id]) 
+    @recipe = Recipe.find(params[:id]) if @recipe.nil?
   end
 
   # POST /recipes
@@ -57,7 +58,8 @@ class RecipesController < ApplicationController
   # PUT /recipes/1
   # PUT /recipes/1.xml
   def update
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find_by_identifier(params[:id]) 
+    @recipe = Recipe.find(params[:id]) if @recipe.nil?
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
@@ -73,7 +75,8 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.xml
   def destroy
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find_by_identifier(params[:id]) 
+    @recipe = Recipe.find(params[:id]) if @recipe.nil?
     @recipe.destroy
 
     respond_to do |format|

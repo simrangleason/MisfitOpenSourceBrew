@@ -1,4 +1,4 @@
-<h3>Misfit Open Source Brew Recipes</h3>
+<h3>Misfit Open Source Brew: Recipes</h3>
 
 <table class="recipes" cellspacing="0" cellpadding="0">
   <tr>
@@ -8,16 +8,20 @@
   <tr>
     <th align="right"><span class='recipe_name'><a href="/recipes/<%= recipe.identifier %>"><%= recipe.name %></a></span></th>
     <td><%= recipe.description %></td>
+    <% if @admin %>
     <td><span class="recipe_actions">
 	<%= link_to 'Show', recipe %> | 
 	<%= link_to 'Edit', edit_recipe_path(recipe) %> |
 	<%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %>
 	</span>
     </td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New recipe', new_recipe_path %>
+<% if @admin %>
+  <%= link_to 'New recipe', new_recipe_path %>
+<% end %>

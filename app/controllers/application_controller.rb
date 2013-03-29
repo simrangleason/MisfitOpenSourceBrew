@@ -7,4 +7,14 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  before_filter :check_admin
+
+  def check_admin
+    if (params[:admin] == "true") 
+      @admin = true
+    else
+      @admin = false
+    end
+  end
 end

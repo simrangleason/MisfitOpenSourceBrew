@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327190039) do
+ActiveRecord::Schema.define(:version => 20130328185412) do
 
   create_table "recipes", :force => true do |t|
     t.string   "identifier"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130327190039) do
     t.text     "secondary"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
 end
