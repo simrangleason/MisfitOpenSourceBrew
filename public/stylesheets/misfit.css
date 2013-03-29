@@ -89,13 +89,19 @@ body {
 
 .recipe_title {
     color: #888888;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: bold;
     margin-top: 1em;
+    margin-left: -.5em;
 }
 .recipe_desc {
     font-size: 1.0em;
     padding-left: 1em;
+    margin-bottom: 2em;
+}
+
+.recipe_index_desc {
+    font-size: .9em;
     margin-bottom: 2em;
 }
 
