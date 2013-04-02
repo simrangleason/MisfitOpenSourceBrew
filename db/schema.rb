@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328185412) do
+ActiveRecord::Schema.define(:version => 20130331222325) do
 
   create_table "recipes", :force => true do |t|
     t.string   "identifier"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(:version => 20130328185412) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.string   "short_description"
+    t.string   "style"
+    t.string   "kind"
   end
 
 end

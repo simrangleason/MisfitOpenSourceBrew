@@ -3,11 +3,26 @@
 <table class="recipes" cellspacing="0" cellpadding="0">
   <tr>
   </tr>
-
+<% running_kind = "" %>
 <% @recipes.each do |recipe| %>
+  <% if recipe.kind != running_kind
+      running_kind = recipe.kind
+   %>
+  <tr>
+    <th align="left"><%= recipe.kind %></th>
+  </tr>
+<% end %>
+
   <tr>
     <th align="right" valign="top"><span class='recipe_name'><a href="/recipes/<%= recipe.identifier %>"><%= recipe.name %></a></span></th>
-    <td valign="top"><span class='recipe_index_desc'><%= recipe.description %></span></td>
+    <td valign="top"><span class='recipe_index_desc'><%= recipe.style %></span></td>
+    <td valign="top"><span class='recipe_index_desc'>
+	<% if recipe.short_description.present? %>
+	   <%= recipe.short_description %>
+        <% else %>
+           <%= recipe.description %>
+        <% end %>
+    </span></td>
     <% if @admin %>
     <td><span class="recipe_actions">
 	<%= link_to 'Show', recipe %> | 

@@ -5,7 +5,13 @@
 
 <div class="recipe_text">
   <div class="recipe_title"><%= @recipe.name %></div>
-  <div class="recipe_desc"><%= @recipe.description %></div>
+  <div class="recipe_desc">
+    <%= @recipe.short_description %>
+    <% if @recipe.description.present? %>
+       <br/>&nbsp;<br/>
+       <%= @recipe.description %>
+    <% end %>
+  </div>
 
   <% if @recipe.malts.present? %>
   <div class="recipe_header">Malts</div>

@@ -2,7 +2,8 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.xml
   def index
-    @recipes = Recipe.find(:all, :order => "name ASC")
+    @recipes = Recipe.find(:all, :order => "kind ASC, name ASC")
+    @kinds = Recipe.find(:all, :select => "DISTINCT(kind)").collect {|r| r.kind }
 
     respond_to do |format|
       format.html # index.html.erb
