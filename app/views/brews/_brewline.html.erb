@@ -1,5 +1,5 @@
 <tr id="<%=brew.identifier%>_noedit"  class="<%=brew_line_class %>">
-  <td><a name="<%=brew.identifier%>"><%= brew.identifier %></td>
+  <td><a name="brew_<%=brew.identifier%>" /><%= brew.identifier %></td>
   <td><%= brew.name %></td>
   <td>
     <% recipe = Recipe.find_by_identifier(brew.recipe)

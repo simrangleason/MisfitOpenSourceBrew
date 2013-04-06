@@ -1,23 +1,7 @@
 <h3 class="page_title">Misfit Open Source Brew Log</h3>
 
 <table class="brewlog" cellspacing="0" cellpadding="0">
-  <tr>
-    <th>id</th>
-    <th>name</th>
-    <th>recipe</th>
-    <th>description</th>
-    <th>start</th>
-    <th>secondary</th>
-    <th>bottled</th>
-    <th>og</th>
-    <th>fg</th>
-    <th>yeast</th>
-    <th>notes</th>
-    <% if @admin %>
-       <th></th>
-    <% end %>
-  </tr>
-
+  <%= render :partial => "brewline_header", :locals => {:anchor => "header" } %>
 <% @brews.each do |brew|
    brew_line_class = (@brew.present? && brew == @brew) ? "brew_line_highlight" : "brew_line"
 %>
@@ -35,6 +19,7 @@
 
 <!-- if we've just made a new one, show it.. -->
 <% if @newbrew.present? %>
+  <%= render :partial => "brewline_header", :locals => {:anchor => "newbrew_header" } %>
   <%= render :partial => "brewline_edit",
              :locals => {:brew => @newbrew, 
                          :editing => true, 
@@ -50,4 +35,19 @@
 <% if @admin %>
   <%= button_to '+', new_brew_path %>
 <% end %>
+
+
+   <% if @brew.present? %>
+      <!-- scroll to the brew in question after loading the table -->
+      <script type="text/javascript">
+	scroll_to_anchor("brew_<%= @brew.identifier %>");
+      </script>
+   <% end %>
+
+   <% if @newbrew.present? %>
+      <!--  scroll to the new brew line after loading the table -->
+      <script type="text/javascript">
+	scroll_to_anchor("newbrew_header");
+      </script>
+   <% end %>
 

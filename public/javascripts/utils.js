@@ -14,3 +14,6 @@ function hide_brew_edit_row(brewid) {
     tr_noedit.style.display="";
 }
 
+function scroll_to_anchor(hash) {
+    location.hash = "#" + hash;
+}

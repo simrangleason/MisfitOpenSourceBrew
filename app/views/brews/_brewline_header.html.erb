@@ -1,0 +1,22 @@
+  <tr>
+    <th>
+      <% if anchor.present? %>
+        <a name="<%= anchor %>"/>
+      <% end %>
+      id
+    </th>
+    <th>name</th>
+    <th>recipe</th>
+    <th>description</th>
+    <th>start</th>
+    <th>secondary</th>
+    <th>bottled</th>
+    <th>og</th>
+    <th>fg</th>
+    <th>yeast</th>
+    <th>notes</th>
+    <% if @admin %>
+       <th></th>
+    <% end %>
+  </tr>
+

@@ -5,7 +5,7 @@
     class="<%=brew_line_class %>">
   <% form_for(brew) do |f| %>
   <td valign="top">
-    <a name="<%=brew.identifier%>"><%= f.text_area :identifier, :cols => 5, :rows => 1 %>
+    <a name="brew_<%=brew.identifier%>"><%= f.text_area :identifier, :cols => 5, :rows => 1 %>
       <br/>
       <% if action_type == "edit" %>
         <%= f.submit 'Update' %>
