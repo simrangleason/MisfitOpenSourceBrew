@@ -1,0 +1,31 @@
+<tr id="<%=brew.identifier%>_edit"
+    <% if !visible %>
+      style="display:none" 
+    <% end %>
+    class="<%=brew_line_class %>">
+  <% form_for(brew) do |f| %>
+  <td valign="top">
+    <a name="<%=brew.identifier%>"><%= f.text_area :identifier, :cols => 5, :rows => 1 %>
+      <br/>
+      <% if action_type == "edit" %>
+        <%= f.submit 'Update' %>
+      <% else %>
+        <%= f.submit 'Create' %>
+      <% end %>
+      <input type="hidden" name="admin" value="true">
+  </td>
+  <td valign="top"><%= f.text_area :name,        :cols => 10, :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :recipe,      :cols => 15, :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :description, :cols => 22, :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :start,       :cols => 10, :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :secondary,   :cols => 10, :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :bottled,     :cols => 10,  :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :og,          :cols => 5,  :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :fg,          :cols => 5,  :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :yeast,       :cols => 5,  :rows => 1 %></td>
+  <td valign="top"><%= f.text_area :notes,       :cols => 30, :rows => 2 %></td>
+  <td valign="top">
+      <input type="button" value = "[x]" onclick="hide_brew_edit_row('<%=brew.identifier%>')" >
+  </td>
+  <% end %>
+</tr>

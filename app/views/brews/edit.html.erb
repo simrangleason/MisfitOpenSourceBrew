@@ -1,0 +1,14 @@
+<h1>Editing brew</h1>
+
+<% form_for(@brew) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => "brew_form", :locals => {:f => f} %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @brew %> |
+<%= link_to 'Back', brews_path %>

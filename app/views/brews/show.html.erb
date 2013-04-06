@@ -1,0 +1,40 @@
+  
+  <table>
+    <tr>
+      <th align="right" valign="top"><%= label_tag :identifier %></th>
+      <th align="right" valign="top"><%= label_tag :name %></th>
+      <th align="right" valign="top"><%= label_tag :recipe %></th>
+      <th align="right" valign="top"><%= label_tag :description %></th>
+      <th align="right" valign="top"><%= label_tag :start %></th>
+      <th align="right" valign="top"><%= label_tag :secondary %></th>
+      <th align="right" valign="top"><%= label_tag :bottled %></th>
+      <th align="right" valign="top"><%= label_tag :og %></th>
+      <th align="right" valign="top"><%= label_tag :fg %></th>
+      <th align="right" valign="top"><%= label_tag :yeast %></th>
+      <th align="right" valign="top"><%= label_tag :notes %></th>
+    </tr>
+    <tr>
+      <td><%= @brew.identifier %></td>
+      <td><%= @brew.name %></td>
+      <td>
+	<% recipe = Recipe.find_by_identifier(@brew.recipe)
+           if recipe.present? %>
+           <a href="/recipes/<%= @brew.recipe %>"><%= recipe.name %></a>
+        <% else %>
+	  <%= @brew.recipe %>
+        <% end %>
+      </td>
+      <td><%= @brew.description %></td>
+      <td><%= @brew.start %></td>
+      <td><%= @brewsecondary %></td>
+      <td><%= @brew.bottled %></td>
+      <td><%= @brew.og %></td>
+      <td><%= @brew.fg %></td>
+      <td><%= @brew.yeast %></td>
+      <td><%= @brew.notes %></td>
+    </tr>
+  </table>
+
+
+<%= link_to 'Edit', edit_brew_path(@brew) %> |
+<%= link_to 'Back', brews_path %>

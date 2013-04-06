@@ -59,6 +59,31 @@
     <%= @recipe.notes %> <!-- TODO: linify... -->
   </p>
   <% end %>
+  <% if @brews.present? && @brews.length > 0 %>
+  <div class="recipe_header">Brewed</div>
+      <table class="brewlog" cellspacing="0" cellpadding="0">
+	<tr>
+	  <th>id</th>
+	  <th>name</th>
+	  <th>description</th>
+	  <th>start</th>
+	  <th>og</th>
+	  <th>fg</th>
+	  <th>notes</th>
+        </tr>
+	<% @brews.each do |brew| %>
+	<tr>
+	  <td><a href="/brews/<%= brew.identifier %>"><%= brew.identifier %></a></td>
+	  <td><a href="/brews/<%= brew.identifier %>"><%= brew.name %></a></td>
+	  <td><%= brew.description %></td>
+	  <td><%= brew.start %></td>
+	  <td><%= brew.og %></td>
+	  <td><%= brew.fg %></td>
+	  <td><%= brew.notes %></td>
+        </tr>
+	<% end %>
+	</table>
+  <% end %>
 
 </div> <!-- recipe_text -->
 <div class="recipe_image">

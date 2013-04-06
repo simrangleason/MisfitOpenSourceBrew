@@ -1,0 +1,23 @@
+<tr id="<%=brew.identifier%>_noedit"  class="<%=brew_line_class %>">
+  <td><a name="<%=brew.identifier%>"><%= brew.identifier %></td>
+  <td><%= brew.name %></td>
+  <td>
+    <% recipe = Recipe.find_by_identifier(brew.recipe)
+       if recipe.present? %>
+    <a href="/recipes/<%= brew.recipe %>"><%= recipe.name %></a>
+    <% else %>
+    <%= brew.recipe %>
+    <% end %>
+  </td>
+  <td><%= brew.description %></td>
+  <td><%= brew.start %></td>
+  <td><%= brew.secondary %></td>
+  <td><%= brew.bottled %></td>
+  <td><%= brew.og %></td>
+  <td><%= brew.fg %></td>
+  <td><%= brew.yeast %></td>
+  <td><%= brew.notes %></td>
+  <% if @admin %>
+    <td><input type="button" value = "[]" onclick="show_brew_edit_row('<%=brew.identifier%>')" ></td>
+  <% end %>
+</tr>

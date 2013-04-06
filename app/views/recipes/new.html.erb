@@ -4,6 +4,7 @@
   <%= f.error_messages %>
 
   <%= render :partial => "recipe_form", :locals => {:f => f} %>
+  <input type="hidden" name="admin" value="<%= @admin %>" />
   <p>
     <%= f.submit 'Create' %>
   </p>

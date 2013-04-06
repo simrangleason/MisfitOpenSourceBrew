@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Misfit Open Source Brew Log</title>
+  <%= stylesheet_link_tag 'misfit' %>
+  <%= javascript_include_tag 'utils' %>
+</head>
+<body>
+
+
+<%= render :partial => "layouts/header" %>
+<%= render :partial => "layouts/nav" %>
+
+<div id="content" style="height:2048px;padding:1em">
+<p style="color: green"><%= notice %></p>
+<%= yield %>
+</div> <!-- content -->
+<%= yield %>
+
+</body>
+</html>

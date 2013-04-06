@@ -1,0 +1,53 @@
+<h3 class="page_title">Misfit Open Source Brew Log</h3>
+
+<table class="brewlog" cellspacing="0" cellpadding="0">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>recipe</th>
+    <th>description</th>
+    <th>start</th>
+    <th>secondary</th>
+    <th>bottled</th>
+    <th>og</th>
+    <th>fg</th>
+    <th>yeast</th>
+    <th>notes</th>
+    <% if @admin %>
+       <th></th>
+    <% end %>
+  </tr>
+
+<% @brews.each do |brew|
+   brew_line_class = (@brew.present? && brew == @brew) ? "brew_line_highlight" : "brew_line"
+%>
+  <%= render :partial => "brewline",
+             :locals => {:brew => brew, :editing => @admin, :brew_line_class => brew_line_class } %>
+  <% if @admin %>
+    <%= render :partial => "brewline_edit",
+             :locals => {:brew => brew,
+                         :editing => @admin,
+                         :brew_line_class => brew_line_class, 
+                         :action_type => "edit",
+                         :visible => false } %>
+  <% end %>
+<% end %>
+
+<!-- if we've just made a new one, show it.. -->
+<% if @newbrew.present? %>
+  <%= render :partial => "brewline_edit",
+             :locals => {:brew => @newbrew, 
+                         :editing => true, 
+                         :brew_line_class => "brew_line_highlight", 
+                         :action_type => "new",
+                         :visible => true } %>
+<% end %>
+
+</table>
+
+<br />
+
+<% if @admin %>
+  <%= button_to '+', new_brew_path %>
+<% end %>
+

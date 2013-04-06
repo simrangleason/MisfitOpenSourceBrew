@@ -15,8 +15,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.xml
   def show
     @recipe = Recipe.find_by_identifier(params[:id]) 
-    @recipe = Recipe.find(params[:id]) if @recipe.nil?
-
+    @recipe ||= Recipe.find(params[:id])
+    @brews = Brew.find_all_by_recipe(@recipe.identifier)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe }
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find_by_identifier(params[:id]) 
-    @recipe = Recipe.find(params[:id]) if @recipe.nil?
+    @recipe ||= Recipe.find(params[:id])
   end
 
   # POST /recipes
@@ -60,7 +60,7 @@ class RecipesController < ApplicationController
   # PUT /recipes/1.xml
   def update
     @recipe = Recipe.find_by_identifier(params[:id]) 
-    @recipe = Recipe.find(params[:id]) if @recipe.nil?
+    @recipe ||= Recipe.find(params[:id])
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
@@ -77,7 +77,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1.xml
   def destroy
     @recipe = Recipe.find_by_identifier(params[:id]) 
-    @recipe = Recipe.find(params[:id]) if @recipe.nil?
+    @recipe ||= Recipe.find(params[:id])
     @recipe.destroy
 
     respond_to do |format|

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :brews
+
   map.resources :recipes
 
   # static pages

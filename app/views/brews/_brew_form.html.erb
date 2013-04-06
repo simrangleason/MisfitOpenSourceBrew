@@ -1,0 +1,36 @@
+  
+  <table>
+    <tr>
+      <th align="right" valign="top"><%= f.label :identifier %></th>
+      <td><%= f.text_field :identifier %></td>
+      <th align="right" valign="top"<%= f.label :name %></th>
+      <td><%= f.text_field :name %></td>
+      <th align="right" valign="top"><%= f.label :recipe %></th>
+      <td><%= f.text_field :recipe %></td>
+    </tr>
+    <tr>
+      <th align="right" valign="top"<%= f.label :description %></th>
+      <td colspan="5"><%= f.text_area :description, :cols=>90, :rows=>2 %></td>
+    </tr>
+    <tr>
+      <th align="right" valign="top"><%= f.label :start %></th>
+      <td ><%= f.text_field :start, :cols => 10 %></td>
+      <th align="right" valign="top"><%= f.label :secondary %></th>
+      <td ><%= f.text_field :secondary, :cols => 10 %></td>
+      <th align="right" valign="top"><%= f.label :bottled %></th>
+      <td ><%= f.text_field :bottled, :cols => 10 %></td>
+    </tr>
+    <tr>
+      <th align="right" valign="top"><%= f.label :og %></th>
+      <td><%= f.text_field :og, :cols => 10 %></td>
+      <th align="right" valign="top"><%= f.label :fg %></th>
+      <td><%= f.text_field :fg, :cols => 10 %></td>
+      <th align="right" valign="top"><%= f.label :yeast %></th>
+      <td><%= f.text_field :yeast, :cols => 20 %></td>
+    </tr>
+    <tr>
+      <th align="right" valign="top"><%= f.label :notes %></th>
+      <td colspan="5"><%= f.text_area :notes, :cols => 90, :rows => 12 %></td>
+    </tr>
+  </table>
+

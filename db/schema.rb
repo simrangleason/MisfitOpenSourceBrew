@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130331222325) do
+ActiveRecord::Schema.define(:version => 20130404043731) do
+
+  create_table "brews", :force => true do |t|
+    t.string   "identifier"
+    t.string   "name"
+    t.string   "recipe"
+    t.text     "description"
+    t.date     "start"
+    t.date     "secondary"
+    t.date     "bottled"
+    t.string   "og"
+    t.string   "fg"
+    t.string   "yeast"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "recipes", :force => true do |t|
     t.string   "identifier"
