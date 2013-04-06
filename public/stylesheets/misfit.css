@@ -36,8 +36,6 @@ body {
 
 #header .section a:hover {
   color: #AA1111;
-  text-decoration: underline;
-
 }
 
 #nav {
@@ -80,8 +78,6 @@ body {
 
 .navbullet a:hover {
   color: #AA1111;
-  text-decoration: underline;
-
 }
 
 .recipe_text {
@@ -137,7 +133,6 @@ body {
 
 .recipe_name a:hover {
   color: #AA1111;
-  text-decoration: underline;
 }
 
 .recipe_actions {
@@ -188,6 +183,7 @@ table.brewlog tr th {
     border: 1px solid #ccc;
     text-align: left;
     padding-left: .5em;
+    padding-right: .5em;
 }
 
 table.brewlog a:link, table.brewlog a:visited {

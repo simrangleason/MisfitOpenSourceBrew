@@ -4,7 +4,7 @@ class BrewsController < ApplicationController
   def index
     @brews = Brew.all
     respond_to do |format|
-      format.html { render 'index' }
+      format.html { render 'index' and return }
       format.xml  { render :xml => @brews }
     end
   end
@@ -37,7 +37,7 @@ class BrewsController < ApplicationController
 
     respond_to do |format|
       if @brew.save
-        format.html { redirect_to(brew_path(@brew, :admin => true)) }
+        format.html { redirect_to(brew_path(@brew, :admin => true)) and return }
         format.xml  { render :xml => @brew, :status => :created, :location => @brew }
       else
         format.html { render :action => "new" }
@@ -53,7 +53,7 @@ class BrewsController < ApplicationController
 
     respond_to do |format|
       if @brew.update_attributes(params[:brew])
-        format.html { redirect_to(brew_path(@brew, :admin => true)) }
+        format.html { redirect_to(brew_path(@brew, :admin => true)) and return }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

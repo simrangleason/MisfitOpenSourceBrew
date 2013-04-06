@@ -11,9 +11,10 @@
          section = 'howtobrew'
       elsif ( action == 'gallery') 
          section = 'gallery'
-      elsif ( action == 'brewlog') 
-         section = 'brewlog'
       end
+   end
+   if ( controller == 'brews') 
+      section = 'brewlog'
    end
 %>
 <div id="header">
