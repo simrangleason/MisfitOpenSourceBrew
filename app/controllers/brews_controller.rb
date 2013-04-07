@@ -14,7 +14,7 @@ class BrewsController < ApplicationController
   def show
     @brew = Brew.find_by_identifier(params[:id])
     @brew ||= Brew.find(params[:id])
-    #return index
+    return index
   end
 
   # GET /brews/new
