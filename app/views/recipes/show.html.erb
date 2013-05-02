@@ -59,6 +59,7 @@
     <%= @recipe.notes %> <!-- TODO: linify... -->
   </p>
   <% end %>
+
   <% if @brews.present? && @brews.length > 0 %>
   <div class="recipe_header">Brewed</div>
       <table class="brewlog" cellspacing="0" cellpadding="0">
@@ -69,7 +70,7 @@
 	  <th>start</th>
 	  <th>og</th>
 	  <th>fg</th>
-	  <th>notes</th>
+	  <th style="width:350px">notes</th>
         </tr>
 	<% @brews.each do |brew| %>
 	<tr>
